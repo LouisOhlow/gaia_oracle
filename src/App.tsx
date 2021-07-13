@@ -1,15 +1,15 @@
 import React from 'react';
 import {TouchableOpacity, View, StyleSheet, Text, Image} from 'react-native';
-import Oracle from './oracle';
+import Oracle from './Oracle';
+import {images6x9, images9x9} from './images';
 
 export class App extends React.Component {
-  
-
   render() {
+    const images = [images6x9[0], images9x9[1]];
     return (
       <View style={styles.container}>
         <View style={styles.oracleContainer}>
-          <Oracle images={[{}]} />
+          <Oracle loading={false} images={images} />
         </View>
         <TouchableOpacity style={styles.button} onPress={() => {}}>
           <Text style={styles.buttonTitle}> tell me my future </Text>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     backgroundColor: 'black',
     borderWidth: 5,
-    top: 170,
+    top: 180,
   },
   container: {
     width: '100%',
@@ -47,5 +47,6 @@ const styles = StyleSheet.create({
     width: 300,
     alignSelf: 'center',
     justifyContent: 'center',
+    top: 140,
   },
 });

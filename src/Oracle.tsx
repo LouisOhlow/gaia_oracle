@@ -1,18 +1,21 @@
 import React from 'react';
-import {StyleSheet, View, Image, Text} from 'react-native';
+import {StyleSheet, View, Image} from 'react-native';
 
 export type Props = {
   images: Array<Object>;
   loading: Boolean;
 };
 
-const Oracle: React.FC<Props> = ({ images, loading }) => {
-  return (
-    <View style={styles.container}>
-      <Text>Image</Text>
-    </View>
-  );
-};
+const Oracle: React.FC<Props> = ({images, loading = false}) => (
+  <View style={styles.container}>
+    {!loading && (
+      <>
+        <Image style={styles.firstImage} source={images[1]} />
+        <Image style={styles.secondImage} source={images[0]} />
+      </>
+    )}
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -20,10 +23,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  greeting: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    margin: 16,
+  firstImage: {
+    width: '100%',
+    height: '60%',
+    resizeMode: 'contain',
+  },
+  secondImage: {
+    width: '100%',
+    height: '40%',
+    resizeMode: 'contain',
   },
 });
 
