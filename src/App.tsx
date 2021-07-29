@@ -1,22 +1,36 @@
 import React from 'react';
 import {TouchableOpacity, View, StyleSheet, Text, Image} from 'react-native';
 import Oracle from './Oracle';
-import {images6x9, images9x9} from './images';
+import {allFormats} from './formatVariations';
+import {getRandomImageByFormat} from './images';
+import {getRandomItem} from './utils';
+
+export type icon = {
+  height: string;
+  width: string;
+  src: Object;
+  format: string;
+};
 
 export class App extends React.Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      images: [images6x9[0], images9x9[1]],
+      images: [],
     };
   }
 
   randomImage: Function = () => {
-    const index1: number = Math.floor(Math.random() * images6x9.length) + 1;
-    const index2: number = Math.floor(Math.random() * images9x9.length) + 1;
+    const formatVariation: Array<icon> = getRandomItem(allFormats);
+    console.log('randomImage: ' + allFormats.length);
+
+    formatVariation.map(formatObject => {
+      const image = getRandomImageByFormat(formatObject.format);
+      formatObject.src = image;
+    });
 
     this.setState({
-      images: [images6x9[index1], images9x9[index2]],
+      images: formatVariation,
     });
   };
 

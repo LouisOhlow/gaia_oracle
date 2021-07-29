@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Image} from 'react-native';
-import FormattedImage from './FormattedImage';
+import {icon} from './App';
 
 export type Props = {
   images: Array<Object>;
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'green',
   },
   firstImage: {
     resizeMode: 'contain',
@@ -27,25 +28,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const formattedImages: Function = (images: Array<Object>) => {
-  switch (images.length) {
-    case 2:
-      const random: number = Math.floor(Math.random() * 2);
-      return format1(images)[random];
-    default:
-      return format1(images);
-  }
+const formattedImages: Function = (images: Array<icon>) => {
+  console.log('formattedImages ' + images.length);
+  return images.map(image => {
+    const style = {
+      height: image.height,
+      width: image.width,
+      resizeMode: 'contain',
+      backgroundColor: 'red',
+    };
+    return <Image style={style} source={image.src} />;
+  });
 };
-
-const format1: Function = (images: Array<Object>) => [
-  <>
-    <FormattedImage type="type9x9" image={images[1]} />
-    <FormattedImage type="type6x9" image={images[0]} />
-  </>,
-  <>
-    <FormattedImage type="type6x9" image={images[0]} />
-    <FormattedImage type="type9x9" image={images[1]} />
-  </>,
-];
 
 export default Oracle;
