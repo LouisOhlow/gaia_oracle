@@ -12,13 +12,13 @@ const type6x9 = {
 
 const type9x3 = {
   height: '100%',
-  width: '20%',
+  width: '33%',
   format: '9x3',
 };
 
 const type9x6 = {
   height: '100%',
-  width: '40%',
+  width: '66%',
   format: '9x6',
 };
 const type3x9 = {
