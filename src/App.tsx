@@ -22,15 +22,21 @@ export class App extends React.Component {
 
   randomImage: Function = () => {
     const formatVariation: Array<icon> = getRandomItem(allFormats);
-    console.log('randomImage: ' + allFormats.length);
+    const randomImages = JSON.parse(JSON.stringify(formatVariation));
 
-    formatVariation.map(formatObject => {
-      const image = getRandomImageByFormat(formatObject.format);
-      formatObject.src = image;
-    });
-
+    for (var i = 0; i < formatVariation.length; i++) {
+      const image = getRandomImageByFormat(formatVariation[i].format);
+      const duplicate = randomImages.find(
+        imageObject => imageObject.src === image,
+      );
+      if (duplicate) {
+        i--;
+      } else {
+        randomImages[i].src = image;
+      }
+    }
     this.setState({
-      images: formatVariation,
+      images: randomImages,
     });
   };
 

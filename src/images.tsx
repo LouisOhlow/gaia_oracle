@@ -168,13 +168,11 @@ const images: Object = {
     require('../src/res/images/9x6/GAYA-ISOTYPES-140.png'),
     require('../src/res/images/9x6/GAYA-ISOTYPES-141.png'),
     require('../src/res/images/9x6/GAYA-ISOTYPES-147.png'),
-
   ],
 };
 
 function getRandomImageByFormat(format: string) {
   const imageList: Array<Object> = images[`images${format}`];
-  console.log('getRandomImagesByFormat: ' + imageList.length);
   return getRandomItem(imageList);
 }
 

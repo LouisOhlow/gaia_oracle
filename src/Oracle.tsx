@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
 });
 
 const formattedImages: Function = (images: Array<icon>) => {
-  console.log('formattedImages ' + images.length);
   const imageComponents = images.map(image => {
     const style = {
       height: image.height,
