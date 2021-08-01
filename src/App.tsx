@@ -4,6 +4,7 @@ import Oracle from './Oracle';
 import {allFormats} from './formatVariations';
 import {getRandomImageByFormat} from './images';
 import {getRandomItem} from './utils';
+import SplashScreen from 'react-native-splash-screen';
 
 export type icon = {
   height: string;
@@ -17,7 +18,12 @@ export class App extends React.Component {
     super(props);
     this.state = {
       images: [],
+      showInfo: true,
     };
+  }
+
+  componentDidMount() {
+    SplashScreen.hide();
   }
 
   randomImage: Function = () => {
@@ -25,7 +31,9 @@ export class App extends React.Component {
     const randomImages = JSON.parse(JSON.stringify(formatVariation));
     const typoImages = [];
     for (var i = 0; i < formatVariation.length; i++) {
-      const {chosenImage: image, isTypo} = getRandomImageByFormat(formatVariation[i].format);
+      const {chosenImage: image, isTypo} = getRandomImageByFormat(
+        formatVariation[i].format,
+      );
       const hasAlreadyTypo = isTypo && typoImages.length >= 1;
       if (isTypo) {
         typoImages[0] = image;
@@ -48,16 +56,69 @@ export class App extends React.Component {
     const images: Array<Object> = this.state.images;
     return (
       <View style={styles.container}>
-        <View style={styles.oracleContainer}>
-          <Oracle loading={false} images={images} />
-        </View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            this.randomImage();
-          }}>
-          <Text style={styles.buttonTitle}> tell me my future </Text>
-        </TouchableOpacity>
+        {this.state.showInfo ? (
+          <View style={styles.infoContainer}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => this.setState({showInfo: false})}>
+              <Image
+                source={require('./res/buttons/GAIA-ORACLE_Interface-04.png')}
+                style={styles.optionImage}
+              />
+            </TouchableOpacity>
+            <View style={styles.textContainer}>
+              <Text  style={styles.textStyle} >
+                WHAT IS GAIA?{"\n"}
+                GAIA IS THE GODDESS OF EARTH. IT IS ALSO THE NAME
+                OF A THEORY BY LYNN MARGULIS AND JAMES LOVELOCK, THAT STATES
+                THAT EARTH‘S BIOSPHERE REGULATES ITSELF BY THE COMBINED INTER-
+                ACTION BETWEEN ALL LIVING THINGS. IT IS ONLY BECAUSE OF THIS
+                DYNAMIC THAT LIFE ON EARTH HAS BEEN POSSIBLE FOR MILLIONS OF
+                YEARS.{"\n"}
+                MAYBE UNTIL NOW.{"\n"}
+                {"\n"}
+                THE ANTHROPOCENE, THE AGE OF MEN, HAS
+                SHAPED THE WORLD, BROKEN THE CIRCLE OF REGENERATION AND IS
+                DESTROYING THE GROUND WE LIVE ON.{"\n"}
+                HOW CAN WE OVERCOME THIS AGE?{"\n"}
+                {"\n"}
+                THE GAIA ORACLE WAS CREATED TO HELP THINK OF WAYS TO ENTER A
+                BETTER FUTURE FOR OUR PLANET.{"\n"}
+                {"\n"}
+                GAIA ORACLE WAS CREATED BY BERLIN
+                BASED ILLUSTRATOR ANTON OHLOW BASED ON HIS MASTER THESIS „GAIA
+                ISOTYPES“ IN COLLABORATION WITH LOUIS OHLOW.{"\n"}
+                {"\n"}
+                {"\n"}
+                {"\n"}
+                {"\n"}
+                {"\n"}
+                www.antonohlow.de{' '}
+              </Text>
+            </View>
+          </View>
+        ) : (
+          <>
+            <TouchableOpacity
+              style={styles.imageButton}
+              onPress={() => this.setState({showInfo: true})}>
+              <Image
+                source={require('./res/buttons/GAIA-ORACLE_Interface-05.png')}
+                style={styles.optionImage}
+              />
+            </TouchableOpacity>
+            <View style={styles.oracleContainer}>
+              <Oracle loading={false} images={images} />
+            </View>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                this.randomImage();
+              }}>
+              <Text style={styles.buttonTitle}> tell me the future </Text>
+            </TouchableOpacity>
+          </>
+        )}
       </View>
     );
   }
@@ -91,6 +152,38 @@ const styles = StyleSheet.create({
     width: 300,
     alignSelf: 'center',
     justifyContent: 'center',
-    top: 140,
+    top: 120,
+  },
+  imageButton: {
+    height: 50,
+    width: 50,
+    alignSelf: 'flex-end',
+    top: 50,
+    right: 50,
+  },
+  optionImage: {
+    resizeMode: 'contain',
+    height: 70,
+    width: 70,
+  },
+  backButton: {
+    height: 50,
+    width: 50,
+    alignSelf: 'flex-start',
+    left: 20,
+  },
+  textContainer: {
+    height: '80%',
+    width: '80%',
+    alignSelf: 'center',
+    top: 100,
+  },
+  infoContainer: {
+    justifyContent: 'center',
+  },
+  textStyle: {
+    fontFamily: 'Helvetica',
+    fontSize: 15,
+    fontWeight: 'bold',
   },
 });
