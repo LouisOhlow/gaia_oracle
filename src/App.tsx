@@ -77,7 +77,7 @@ export class App extends React.Component {
                 YEARS.{"\n"}
                 MAYBE UNTIL NOW.{"\n"}
                 {"\n"}
-                THE ANTHROPOCENE, THE AGE OF MEN, HAS
+                THE ANTHROPOCENE, THE AGE OF MAN, HAS
                 SHAPED THE WORLD, BROKEN THE CIRCLE OF REGENERATION AND IS
                 DESTROYING THE GROUND WE LIVE ON.{"\n"}
                 HOW CAN WE OVERCOME THIS AGE?{"\n"}
