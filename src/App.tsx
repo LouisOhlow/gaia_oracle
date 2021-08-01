@@ -46,7 +46,7 @@ export class App extends React.Component {
         src,
       },
     ];
-    super(props);
+
     this.state = {
       images: startImages,
       showInfo: false,
@@ -122,7 +122,6 @@ export class App extends React.Component {
                 {'\n'}
                 {'\n'}
                 {'\n'}
-                {'\n'}
                 www.antonohlow.de{' '}
               </Text>
             </View>
@@ -164,7 +163,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     backgroundColor: 'black',
     borderWidth: 5,
-    top: 180,
+    top: '20%',
   },
   container: {
     width: '100%',
@@ -178,11 +177,11 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   oracleContainer: {
-    height: 500,
-    width: 300,
+    height: '60%',
+    aspectRatio: 0.6,
     alignSelf: 'center',
     justifyContent: 'center',
-    top: 120,
+    top: '15%',
   },
   imageButton: {
     height: 50,
@@ -203,17 +202,17 @@ const styles = StyleSheet.create({
     left: 20,
   },
   textContainer: {
-    height: '80%',
+    height: '100%',
     width: '80%',
     alignSelf: 'center',
-    top: 100,
+    top: '5%',
   },
   infoContainer: {
     justifyContent: 'center',
+    top: '10%',
   },
   textStyle: {
     fontFamily: 'Helvetica',
-    fontSize: 15,
     fontWeight: 'bold',
   },
 });
