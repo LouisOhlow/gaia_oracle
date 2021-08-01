@@ -58,6 +58,39 @@ const images: Object = {
     require('../src/res/images/6x9/GAYA-ISOTYPES-143.png'),
   ],
   images3x9: [
+    require('../src/res/images/3x9/GAYA-ISOTYPES-31.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-32.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-33.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-51.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-52.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-53.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-67.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-68.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-69.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-70.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-83.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-101.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-102.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-103.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-104.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-108.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-109.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-110.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-111.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-112.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-113.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-114.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-115.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-116.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-117.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-118.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-126.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-129.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-137.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-138.png'),
+    require('../src/res/images/3x9/GAYA-ISOTYPES-143.png'),
+  ],
+  images3x9typo: [
     require('../src/res/images/3x9/Gaya_Isotype-TYPO_Zeichenfläche1Kopie2.png'),
     require('../src/res/images/3x9/Gaya_Isotype-TYPO_Zeichenfläche1Kopie3.png'),
     require('../src/res/images/3x9/Gaya_Isotype-TYPO_Zeichenfläche1Kopie4.png'),
@@ -93,37 +126,6 @@ const images: Object = {
     require('../src/res/images/3x9/Gaya_Isotype-TYPO-33.png'),
     require('../src/res/images/3x9/Gaya_Isotype-TYPO-34.png'),
     require('../src/res/images/3x9/Gaya_Isotype-TYPO-35.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-31.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-32.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-33.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-51.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-52.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-53.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-67.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-68.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-69.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-70.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-83.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-101.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-102.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-103.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-104.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-108.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-109.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-110.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-111.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-112.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-113.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-114.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-115.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-116.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-117.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-118.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-126.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-129.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-137.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-138.png'),
-    require('../src/res/images/3x9/GAYA-ISOTYPES-143.png'),
   ],
   images9x3: [
     require('../src/res/images/9x3/GAYA-ISOTYPES-38.png'),
@@ -172,8 +174,18 @@ const images: Object = {
 };
 
 function getRandomImageByFormat(format: string) {
+  if (format === '3x9') {
+    const all3x9 = [images.images3x9, images.images3x9typo]
+    const random = Math.round(Math.random());
+    const chosenList = all3x9[random];
+    const chosenImage = getRandomItem(chosenList);
+    const isTypo = random === 1;
+    return {chosenImage, isTypo};
+  }
   const imageList: Array<Object> = images[`images${format}`];
-  return getRandomItem(imageList);
+  const chosenImage = getRandomItem(imageList);
+  const isTypo = false;
+  return {chosenImage, isTypo};
 }
 
 export {getRandomImageByFormat};

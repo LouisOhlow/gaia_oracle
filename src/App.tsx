@@ -23,13 +23,17 @@ export class App extends React.Component {
   randomImage: Function = () => {
     const formatVariation: Array<icon> = getRandomItem(allFormats);
     const randomImages = JSON.parse(JSON.stringify(formatVariation));
-
+    const typoImages = [];
     for (var i = 0; i < formatVariation.length; i++) {
-      const image = getRandomImageByFormat(formatVariation[i].format);
+      const {chosenImage: image, isTypo} = getRandomImageByFormat(formatVariation[i].format);
+      const hasAlreadyTypo = isTypo && typoImages.length >= 1;
+      if (isTypo) {
+        typoImages[0] = image;
+      }
       const duplicate = randomImages.find(
         imageObject => imageObject.src === image,
       );
-      if (duplicate) {
+      if (duplicate || hasAlreadyTypo) {
         i--;
       } else {
         randomImages[i].src = image;
