@@ -16,9 +16,40 @@ export type icon = {
 export class App extends React.Component {
   constructor(props: any) {
     super(props);
+    const src = require('./res/images/3x9/GAYA-ISOTYPES-112.png');
+    const height = '20%';
+    const width = '100%';
+    const startImages = [
+      {
+        height,
+        width,
+        src,
+      },
+      {
+        height,
+        width,
+        src,
+      },
+      {
+        height,
+        width,
+        src,
+      },
+      {
+        height,
+        width,
+        src,
+      },
+      {
+        height,
+        width,
+        src,
+      },
+    ];
+    super(props);
     this.state = {
-      images: [],
-      showInfo: true,
+      images: startImages,
+      showInfo: false,
     };
   }
 
@@ -67,32 +98,31 @@ export class App extends React.Component {
               />
             </TouchableOpacity>
             <View style={styles.textContainer}>
-              <Text  style={styles.textStyle} >
-                WHAT IS GAIA?{"\n"}
-                GAIA IS THE GODDESS OF EARTH. IT IS ALSO THE NAME
-                OF A THEORY BY LYNN MARGULIS AND JAMES LOVELOCK, THAT STATES
-                THAT EARTH‘S BIOSPHERE REGULATES ITSELF BY THE COMBINED INTER-
-                ACTION BETWEEN ALL LIVING THINGS. IT IS ONLY BECAUSE OF THIS
-                DYNAMIC THAT LIFE ON EARTH HAS BEEN POSSIBLE FOR MILLIONS OF
-                YEARS.{"\n"}
-                MAYBE UNTIL NOW.{"\n"}
-                {"\n"}
-                THE ANTHROPOCENE, THE AGE OF MAN, HAS
-                SHAPED THE WORLD, BROKEN THE CIRCLE OF REGENERATION AND IS
-                DESTROYING THE GROUND WE LIVE ON.{"\n"}
-                HOW CAN WE OVERCOME THIS AGE?{"\n"}
-                {"\n"}
+              <Text style={styles.textStyle}>
+                WHAT IS GAIA?{'\n'}
+                GAIA IS THE GODDESS OF EARTH. IT IS ALSO THE NAME OF A THEORY BY
+                LYNN MARGULIS AND JAMES LOVELOCK, THAT STATES THAT EARTH‘S
+                BIOSPHERE REGULATES ITSELF BY THE COMBINED INTER- ACTION BETWEEN
+                ALL LIVING THINGS. IT IS ONLY BECAUSE OF THIS DYNAMIC THAT LIFE
+                ON EARTH HAS BEEN POSSIBLE FOR MILLIONS OF YEARS.{'\n'}
+                MAYBE UNTIL NOW.{'\n'}
+                {'\n'}
+                THE ANTHROPOCENE, THE AGE OF MAN, HAS SHAPED THE WORLD, BROKEN
+                THE CIRCLE OF REGENERATION AND IS DESTROYING THE GROUND WE LIVE
+                ON.{'\n'}
+                HOW CAN WE OVERCOME THIS AGE?{'\n'}
+                {'\n'}
                 THE GAIA ORACLE WAS CREATED TO HELP THINK OF WAYS TO ENTER A
-                BETTER FUTURE FOR OUR PLANET.{"\n"}
-                {"\n"}
-                GAIA ORACLE WAS CREATED BY BERLIN
-                BASED ILLUSTRATOR ANTON OHLOW BASED ON HIS MASTER THESIS „GAIA
-                ISOTYPES“ IN COLLABORATION WITH LOUIS OHLOW.{"\n"}
-                {"\n"}
-                {"\n"}
-                {"\n"}
-                {"\n"}
-                {"\n"}
+                BETTER FUTURE FOR OUR PLANET.{'\n'}
+                {'\n'}
+                GAIA ORACLE WAS CREATED BY BERLIN BASED ILLUSTRATOR ANTON OHLOW
+                BASED ON HIS MASTER THESIS „GAIA ISOTYPES“ IN COLLABORATION WITH
+                LOUIS OHLOW.{'\n'}
+                {'\n'}
+                {'\n'}
+                {'\n'}
+                {'\n'}
+                {'\n'}
                 www.antonohlow.de{' '}
               </Text>
             </View>
